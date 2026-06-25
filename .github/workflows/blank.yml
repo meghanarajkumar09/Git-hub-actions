@@ -1,11 +1,13 @@
-name: First Pipeline
+name: Multi-Step Pipeline
 
-on: [push]
+on:
+  push
 
 jobs:
-  test:
+  demo:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Hello
-        run: echo "Hello GitHub Actions"
+      - run: echo "Step 1"
+      - run: date
+      - run: pwd
